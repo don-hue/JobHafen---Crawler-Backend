@@ -53,7 +53,7 @@ Primär werden DirectMessages verwendet mit dem AMQ-Protokoll.
 
 Das Frontend wird vollständig mit **TypeScript** umgesetzt. Für die Benutzeroberfläche existieren in **React** und **Angular**; die beiden beliebtesten FE-Frameworks. Wie schon erwähnt kann jedes FE verwendet werden; auch Android oder iOS.
 
-Das Backend basiert auf **Java**.
+Das Backend basiert auf **Java mit Spring-Boot**.
 
 Für die Kommunikation zwischen einzelnen Komponenten wird **RabbitMQ** eingesetzt. **PostgreSQL** dient als relationale Datenbank zur persistenten Speicherung der Daten; beide laufen im Docker Container. Die Images können im Dockerhub runtergeladen werden.
 
