@@ -21,6 +21,9 @@ Die Crawler werden *dynamisch* mittels einer **Factory** gebaut.
 
 Zum Crawlen wird *Jsoup* oder *HtmlUnit* verwendet. 
 
+Es wird *Maven* verwendet mit **Spring-Boot** verwendet. 
+```mvn spring-boot:run```
+
 
 ---
 
@@ -55,7 +58,7 @@ Das Backend basiert auf **Java**.
 Für die Kommunikation zwischen einzelnen Komponenten wird **RabbitMQ** eingesetzt. **PostgreSQL** dient als relationale Datenbank zur persistenten Speicherung der Daten; beide laufen im Docker Container. Die Images können im Dockerhub runtergeladen werden.
 
 Es werden die neuesten Versionen verwendet d.h.
-* Java 25 SE
+* Java 25 SE mit Spring-Boot
 * Angular 22 als Typerscript-Variante
 ---
 
