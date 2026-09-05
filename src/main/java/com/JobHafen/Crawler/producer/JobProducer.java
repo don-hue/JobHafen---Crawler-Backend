@@ -1,6 +1,6 @@
 package com.JobHafen.Crawler.producer;
 import com.JobHafen.Crawler.config.RabbitMQJobConfig;
-import com.JobHafen.Crawler.dto.JobDto;
+import de.TheDonJuan.dto.job.JobDto;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.core.ParameterizedTypeReference;

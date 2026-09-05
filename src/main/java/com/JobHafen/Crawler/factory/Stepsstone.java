@@ -1,9 +1,9 @@
 package com.JobHafen.Crawler.factory;
 
 
-import com.JobHafen.Crawler.dto.CompanyDto;
-import com.JobHafen.Crawler.dto.JobDto;
-import com.JobHafen.Crawler.dto.SearchToCrawlDto;
+import de.TheDonJuan.dto.CompanyDto;
+import de.TheDonJuan.dto.job.JobDto;
+import de.TheDonJuan.dto.search.SearchToCrawlDto;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;

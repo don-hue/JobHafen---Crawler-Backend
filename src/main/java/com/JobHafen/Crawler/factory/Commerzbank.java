@@ -1,15 +1,13 @@
 package com.JobHafen.Crawler.factory;
-import com.JobHafen.Crawler.dto.CompanyDto;
-import com.JobHafen.Crawler.dto.JobDto;
-import com.JobHafen.Crawler.dto.SearchToCrawlDto;
+import de.TheDonJuan.dto.CompanyDto;
+import de.TheDonJuan.dto.job.JobDto;
+import de.TheDonJuan.dto.search.SearchToCrawlDto;
 import org.htmlunit.WebClient;
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.ObjectMapper;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 public class Commerzbank implements CrawlerInterface{
 
     private final String url;
@@ -72,6 +70,8 @@ public class Commerzbank implements CrawlerInterface{
                         null,
                         true
                 );
+
+
 
                 JobDto jobDto = new JobDto(
                         title,

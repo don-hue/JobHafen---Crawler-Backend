@@ -1,7 +1,7 @@
 package com.JobHafen.Crawler.service;
 
-import com.JobHafen.Crawler.dto.JobDto;
-import com.JobHafen.Crawler.dto.SearchToCrawlDto;
+import de.TheDonJuan.dto.job.JobDto;
+import de.TheDonJuan.dto.search.SearchToCrawlDto;
 import com.JobHafen.Crawler.dto.TaskDTO;
 import com.JobHafen.Crawler.factory.CrawlerFactory;
 import com.JobHafen.Crawler.factory.CrawlerInterface;
@@ -18,17 +18,17 @@ public class JobService {
     @Autowired
     JobProducer jobProducer;
 
-    public Boolean crawlUrl(List<?> searches) {
+    public Boolean crawlUrl(List<SearchToCrawlDto> searches) {
         ExecutorService crawlerPool = Executors.newFixedThreadPool(10);
         try {
-            ObjectMapper objectMapper = new ObjectMapper();
-            List<SearchToCrawlDto> dtoList = searches.stream()
-                    .map(search -> objectMapper.convertValue(
-                            search,
-                            SearchToCrawlDto.class
-                    ))
-                    .toList();
-            List<Future<Boolean>> futures = dtoList.stream()
+//            ObjectMapper objectMapper = new ObjectMapper();
+//            List<SearchToCrawlDto> dtoList = searches.stream()
+//                    .map(search -> objectMapper.convertValue(
+//                            search,
+//                            SearchToCrawlDto.class
+//                    ))
+//                    .toList();
+            List<Future<Boolean>> futures = searches.stream()
                     .flatMap(search -> search.urls().stream()
                             .map(url -> new TaskDTO(url, search)))
                     .map(task -> crawlerPool.submit(() -> {

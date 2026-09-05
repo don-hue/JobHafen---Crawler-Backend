@@ -1,7 +1,7 @@
 package com.JobHafen.Crawler.consumer;
 
 import com.JobHafen.Crawler.config.RabbitMQJobConfig;
-import com.JobHafen.Crawler.dto.SearchToCrawlDto;
+import de.TheDonJuan.dto.search.SearchToCrawlDto;
 import com.JobHafen.Crawler.service.JobService;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ public class JobConsumer {
             queues = RabbitMQJobConfig.CRAWL_SEARCHES_REQUEST_QUEUE,
             containerFactory = "jobListenerFactory"
     )
-    public Boolean crawlSearches(List<?> searches) {
+    public Boolean crawlSearches(List<SearchToCrawlDto> searches) {
         return jobService.crawlUrl(searches);
     }
 }

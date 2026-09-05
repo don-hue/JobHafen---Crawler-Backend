@@ -24,8 +24,8 @@ public class RabbitMQJobConfig {
     public static final String SAVE_JOB_ROUTING_KEY = "jobs.saveJob.request";
     public static final String CRAWL_SEARCHES_REQUEST_QUEUE = "jobs.request.crawlSearches.queue";
     public static final String CRAWL_SEARCHES_ROUTING_KEY = "jobs.crawlSearches.request";
-    public static final String CONFIRM_CRAWL_REQUEST_QUEUE = "jobs.request.confirmCrawl.queue";
-    public static final String CONFIRM_CRAWL_ROUTING_KEY = "jobs.confirmCrawl.request";
+    public static final String CONFIRM_CRAWL_REQUEST_QUEUE = "search.request.confirmCrawl.queue";
+    public static final String CONFIRM_CRAWL_ROUTING_KEY = "search.confirmCrawl.request";
 
     @Bean
     public Queue saveSearchQueue() {
@@ -40,22 +40,7 @@ public class RabbitMQJobConfig {
 
     @Bean
     public MessageConverter jobMessageConverter() {
-        JacksonJsonMessageConverter converter =
-                new JacksonJsonMessageConverter();
-
-        DefaultClassMapper classMapper = new DefaultClassMapper();
-
-        Map<String, Class<?>> idClassMapping = new HashMap<>();
-
-        idClassMapping.put(
-                "com.JobHafen.Proxy.dto.SearchToCrawlDto",
-                com.JobHafen.Crawler.dto.SearchToCrawlDto.class
-        );
-        classMapper.setIdClassMapping(idClassMapping);
-
-        converter.setClassMapper(classMapper);
-
-        return converter;
+        return new JacksonJsonMessageConverter();
     }
 
     @Bean

@@ -1,6 +1,6 @@
 package com.JobHafen.Crawler.factory;
 
-import com.JobHafen.Crawler.dto.JobDto;
+import de.TheDonJuan.dto.job.JobDto;
 
 import java.util.ArrayList;
 import java.util.List;

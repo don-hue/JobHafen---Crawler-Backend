@@ -1,6 +1,6 @@
 package com.JobHafen.Crawler.factory;
 
-import com.JobHafen.Crawler.dto.SearchToCrawlDto;
+import de.TheDonJuan.dto.search.SearchToCrawlDto;
 
 public class CrawlerFactory {
     public static CrawlerInterface createCrawler(String url, SearchToCrawlDto search) {
